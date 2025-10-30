@@ -2,5 +2,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    project_maangement_app_lib::run()
+    project_management_app_lib::run()
 }
