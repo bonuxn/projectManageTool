@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+.container {
+    padding-top: 0vh;
+}
+.div {
+    text-align: left;
+}
