@@ -1,5 +1,6 @@
 import { Outlet, Link } from 'react-router';
 import './MainLayout.css';
+import Sidebar from '../components/Sidebar';
 
 export default function MainLayout() {
   return (
@@ -8,13 +9,7 @@ export default function MainLayout() {
       <div className="row justify-content-start">
         
         <div className="sidebar">
-          <nav>
-            <ul>
-              <li><Link to="/">ホーム</Link></li>
-              <li><Link to="/project">アバウト</Link></li>
-              <li><Link to="/home">コンタクト</Link></li>
-            </ul>
-          </nav>
+          <Sidebar />
         </div>
         <div className="content">
           <Outlet /> {/* ここが切り替わる */}
