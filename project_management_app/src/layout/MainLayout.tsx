@@ -1,4 +1,4 @@
-import { Outlet, Link } from 'react-router';
+import { Outlet } from 'react-router';
 import './MainLayout.css';
 import Sidebar from '../components/Sidebar';
 
