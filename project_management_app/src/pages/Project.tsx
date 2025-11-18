@@ -1,69 +1,44 @@
 import "./Project.css"
-import {
-  Tabs,
-  TabsHeader,
-  TabsBody,
-  Tab,
-  TabPanel,
-} from "@material-tailwind/react";
+// import React from "react";
+// import {
+//   Tabs
+// } from "@material-tailwind/react";
+// import { SelectFace3d, ProfileCircle, Settings } from "iconoir-react";
 
 export default function Project() {
- 
-    const data = [
-    {
-        label: "HTML",
-        value: "html",
-        desc: `It really matters and then like it really doesn't matter.
-        What matters is the people who are sparked by it. And the people 
-        who are like offended by it, it doesn't matter.`,
-    },
-    {
-        label: "React",
-        value: "react",
-        desc: `Because it's about motivating the doers. Because I'm here
-        to follow my dreams and inspire other people to follow their dreams, too.`,
-    },
-    {
-        label: "Vue",
-        value: "vue",
-        desc: `We're not always in the position that we want to be at.
-        We're constantly growing. We're constantly making mistakes. We're
-        constantly trying to express ourselves and actualize our dreams.`,
-    },
-    {
-        label: "Angular",
-        value: "angular",
-        desc: `Because it's about motivating the doers. Because I'm here
-        to follow my dreams and inspire other people to follow their dreams, too.`,
-    },
-    {
-        label: "Svelte",
-        value: "svelte",
-        desc: `We're not always in the position that we want to be at.
-        We're constantly growing. We're constantly making mistakes. We're
-        constantly trying to express ourselves and actualize our dreams.`,
-    },
-    ];
-
-  return (
-    <div>
-    <Tabs value="html" className="sss">
-      <TabsHeader placeholder={undefined} onResize={undefined} onResizeCapture={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-        {data.map(({ label, value }) => (
-          <Tab key={value} value={value} placeholder={undefined} onResize={undefined} onResizeCapture={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-            {label}
-          </Tab>
-        ))}
-
-      </TabsHeader>
-      <TabsBody placeholder={undefined} onResize={undefined} onResizeCapture={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-        {data.map(({ value, desc }) => (
-          <TabPanel key={value} value={value}>
-            {desc}
-          </TabPanel>
-        ))}
-      </TabsBody>
-    </Tabs>
-    </div>
+    return (
+      <div>ss</div>
+    // <Tabs defaultValue="dashboard">
+    //   <Tabs.List className="w-full">
+    //     <Tabs.Trigger className="w-full" value="dashboard">
+    //       <SelectFace3d className="mr-2 h-4 w-4" />
+    //       Dashboard
+    //     </Tabs.Trigger>
+    //     <Tabs.Trigger className="w-full" value="profile">
+    //       <ProfileCircle className="mr-2 h-4 w-4" />
+    //       User Profile
+    //     </Tabs.Trigger>
+    //     <Tabs.Trigger className="w-full" value="settings">
+    //       <Settings className="mr-2 h-4 w-4" />
+    //       Settings
+    //     </Tabs.Trigger>
+    //     <Tabs.TriggerIndicator />
+    //   </Tabs.List>
+    //   <Tabs.Panel value="dashboard">
+    //     It really matters and then like it really doesn&apos;t matter. What
+    //     matters is the people who are sparked by it. And the people who are like
+    //     offended by it, it doesn&apos;t matter.
+    //   </Tabs.Panel>
+    //   <Tabs.Panel value="profile">
+    //     Because it&apos;s about motivating the doers. Because I&apos;m here to
+    //     follow my dreams and inspire other people to follow their dreams, too.
+    //   </Tabs.Panel>
+    //   <Tabs.Panel value="settings">
+    //     We&apos;re not always in the position that we want to be at. We&apos;re
+    //     constantly growing. We&apos;re constantly making mistakes. We&apos;re
+    //     constantly trying to express ourselves and actualize our dreams.
+    //   </Tabs.Panel>
+    // </Tabs>
   );
+
 }   
