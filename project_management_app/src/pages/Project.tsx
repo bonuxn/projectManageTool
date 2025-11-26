@@ -1,4 +1,5 @@
 import "./Project.css"
+import React, { useState } from "react";
 
 // import {
 //   Tabs,
@@ -7,52 +8,97 @@ import "./Project.css"
 //   Tab,
 //   TabPanel,
 // } from "@material-tailwind/react";
+type ModalType = "task" | "milestone" | null;
 
-export default function Project() {
+const Project: React.FC = () => {
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [modalType, setModalType] = useState<ModalType>(null);
 
-  // type TabData = {
-  //   label: string;
-  //   value: string;
-  //   desc: string;
-  // };
-  // const data: TabData[] = [
-  //   {
-  //     label: "HTML",
-  //     value: "html",
-  //     desc: `It really matters and then like it really doesn't matter.
-  //     What matters is the people who are sparked by it. And the people 
-  //     who are like offended by it, it doesn't matter.`,
-  //   },
-  //   {
-  //     label: "React",
-  //     value: "react",
-  //     desc: `Because it's about motivating the doers. Because I'm here
-  //     to follow my dreams and inspire other people to follow their dreams, too.`,
-  //   },
-  //   {
-  //     label: "Vue",
-  //     value: "vue",
-  //     desc: `We're not always in the position that we want to be at.
-  //     We're constantly growing. We're constantly making mistakes. We're
-  //     constantly trying to express ourselves and actualize our dreams.`,
-  //   },
-  //   {
-  //     label: "Angular",
-  //     value: "angular",
-  //     desc: `Because it's about motivating the doers. Because I'm here
-  //     to follow my dreams and inspire other people to follow their dreams, too.`,
-  //   },
-  //   {
-  //     label: "Svelte",
-  //     value: "svelte",
-  //     desc: `We're not always in the position that we want to be at.
-  //     We're constantly growing. We're constantly making mistakes. We're
-  //     constantly trying to express ourselves and actualize our dreams.`,
-  //   },
-  // ];
- 
+  const handleAddTaskClick = () => {
+    setModalType("task");
+  };
+
+  const handleDropdownClick = () => {
+    setShowDropdown((prev) => !prev);
+  };
+
+  const handleSelect = (type: ModalType) => {
+    setModalType(type);
+    setShowDropdown(false);
+  };
+
+  const closeModal = () => setModalType(null);
+
   return (
-    <div>project</div>
-  );
+    <div style={{ position: "relative", padding: "20px" }}>
+      {/* タスクを追加ボタン */}
+      <button onClick={handleAddTaskClick}>＋ タスクを追加</button>
 
-}   
+      {/* ドロップダウンボタン */}
+      <button onClick={handleDropdownClick} style={{ marginLeft: "10px" }}>
+        ▼
+      </button>
+
+      {/* ドロップダウンメニュー */}
+      {showDropdown && (
+        <ul
+          style={{
+            position: "absolute",
+            top: "40px",
+            left: "100px",
+            border: "1px solid #ccc",
+            background: "#fff",
+            listStyle: "none",
+            padding: "10px",
+            width: "150px",
+          }}
+        >
+          <li
+            style={{ padding: "5px", cursor: "pointer" }}
+            onClick={() => handleSelect("task")}
+          >
+            タスク
+          </li>
+          <li
+            style={{ padding: "5px", cursor: "pointer" }}
+            onClick={() => handleSelect("milestone")}
+          >
+            マイルストーン
+          </li>
+        </ul>
+      )}
+
+      {/* モーダル */}
+      {modalType && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            background: "rgba(0,0,0,0.5)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div
+            style={{
+              background: "#fff",
+              padding: "20px",
+              borderRadius: "8px",
+              width: "300px",
+            }}
+          >
+            <h2>
+              {modalType === "task" ? "タスク追加画面" : "マイルストーン追加画面"}
+            </h2>
+            <button onClick={closeModal}>閉じる</button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+export default Project;
