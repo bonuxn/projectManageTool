@@ -1,6 +1,6 @@
 import "./Project.css"
 import React, { useState } from "react";
-
+import TaskTable from "../components/taskTable/TaskTable";
 // import {
 //   Tabs,
 //   TabsHeader,
@@ -38,7 +38,9 @@ const Project: React.FC = () => {
       <button onClick={handleDropdownClick} style={{ marginLeft: "10px" }}>
         ▼
       </button>
-
+      <div className="taskTable">
+        <TaskTable/>
+      </div>
       {/* ドロップダウンメニュー */}
       {showDropdown && (
         <ul
